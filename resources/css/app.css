@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-cinzel: 'Cinzel', ui-serif, serif;
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-gold: #9F7D44;
+    --color-nature: #EDEBE5;
+    --color-primary-text: #1A1A1A;
+    --color-secondary-text: #6B6B6B;
+    --color-border: #E5E5E5;
+
+    --spacing-section: 100px;
+    --spacing-section-mobile: 60px;
+
+    --max-width-resort: 1300px;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-nature);
+        color: var(--color-primary-text);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: var(--font-cinzel);
+    }
+}
+
+@layer components {
+    .btn-primary {
+        background-color: var(--color-gold);
+        color: white;
+        padding: 12px 32px;
+        font-family: var(--font-sans);
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(159, 125, 68, 0.3);
+    }
+
+    .btn-secondary {
+        border: 1px solid white;
+        color: white;
+        padding: 12px 32px;
+        font-family: var(--font-sans);
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: white;
+        color: var(--color-primary-text);
+    }
+
+    .section-container {
+        max-width: var(--max-width-resort);
+        margin-left: auto;
+        margin-right: auto;
+        padding: var(--spacing-section) 24px;
+    }
+
+    .section-title {
+        font-family: var(--font-cinzel);
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--color-primary-text);
+        letter-spacing: 0.05em;
+    }
+
+    .section-subtitle {
+        font-family: var(--font-sans);
+        color: var(--color-secondary-text);
+        font-size: 1.125rem;
+        font-weight: 300;
+        margin-top: 12px;
+    }
+
+    .gold-divider {
+        width: 64px;
+        height: 1px;
+        background-color: var(--color-gold);
+        margin: 24px 0;
+    }
+}
