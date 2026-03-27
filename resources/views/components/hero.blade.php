@@ -24,7 +24,7 @@
     {{-- ============================================================
          LAYER 1 (z-0): BACKGROUND — Image swaps to Video
     ============================================================ --}}
-    
+
     {{-- Background Image --}}
     <div class="absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out"
          :class="playing ? 'opacity-0' : 'opacity-100'">
@@ -51,10 +51,10 @@
          LAYER 2 (z-10): HERO CONTENT + GLASS VIDEO CARD
     ============================================================ --}}
     <div class="relative z-10 w-full max-w-[var(--max-width-resort)] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 pt-20">
-        
+
         {{-- LEFT: Text Content --}}
         <div class="flex flex-col justify-center max-w-2xl w-full text-center lg:text-left items-center lg:items-start text-white">
-            
+
             {{-- Eyebrow --}}
             <div class="flex items-center gap-4 mb-6 lg:mb-8">
                 <span class="hidden lg:block w-12 h-px bg-[var(--color-gold)]"></span>
@@ -68,7 +68,7 @@
             <h1 class="font-cinzel text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-medium leading-[1.1] mb-6 lg:mb-8 drop-shadow-xl"
                 style="mask-image: linear-gradient(to top, transparent 0%, black 45%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 45%);">
                 Escape<br class="hidden lg:block" />
-                <span class="text-[var(--color-gold)] italic font-light">Into</span> 
+                <span class="text-[var(--color-gold)]  font-light">Into</span>
                 Nature
             </h1>
 
@@ -83,7 +83,7 @@
                 <a href="/book" class="btn-primary w-full sm:w-auto text-center inline-flex justify-center items-center">
                     Reserve Your Stay
                 </a>
-                
+
                 {{-- Mobile Watch Video Action --}}
                 <button @click="playing ? pauseVideo() : playVideo()" class="btn-secondary w-full sm:w-auto lg:hidden text-center inline-flex justify-center items-center gap-3">
                     <span x-text="playing ? 'Pause Video' : 'Watch Film'"></span>
@@ -106,7 +106,7 @@
 
         {{-- RIGHT: Video Card (Desktop Only) --}}
         <div class="hidden lg:flex flex-col items-end shrink-0 w-[380px]">
-            
+
             {{-- EXPANDED CARD (default video thumbnail) --}}
             <div x-show="!playing"
                  x-transition:enter="transition ease-out duration-700 delay-300"
@@ -116,21 +116,21 @@
                  x-transition:leave-start="opacity-100 translate-y-0"
                  x-transition:leave-end="opacity-0 translate-y-8"
                  class="w-full">
-                
-                <div class="bg-black/20 backdrop-blur-md border border-white/10 p-5 rounded-none hover:-translate-y-2 transition-transform duration-500 cursor-pointer group"
+
+                <div class="bg-black/20 backdrop-blur-md border border-white/10 p-5 rounded-[40px] hover:-translate-y-2 transition-transform duration-500 cursor-pointer group"
                      @click="playVideo()">
-                    
+
                     {{-- Thumbnail --}}
-                    <div class="relative overflow-hidden mb-6 h-56 w-full bg-gray-900 border border-white/10">
-                        <img src="{{ asset('images/hero-thumbnail.jpg') }}" 
-                             alt="Birds Resort Cinematic" 
-                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+                    <div class="relative overflow-hidden rounded-4xl mb-6 h-56 w-full bg-gray-900 border border-white/10">
+                        <img src="{{ asset('images/hero-thumbnail.jpg') }}"
+                             alt="Birds Resort Cinematic"
+                             class="w-full h-full  object-cover transform group-hover:scale-105 transition-transform duration-1000">
                         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
-                        
+
                         {{-- Play Icon --}}
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-16 h-16 rounded-full border border-white/50 flex items-center justify-center group-hover:bg-[var(--color-gold)] group-hover:border-[var(--color-gold)] transition-all duration-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                            <div class="w-16 h-16 rounded-full border border-white/50 flex items-center justify-center  group-hover:bg-[var(--color-gold)] group-hover:border-[var(--color-gold)] transition-all duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
@@ -165,7 +165,7 @@
                  x-transition:leave-start="opacity-100 translate-x-0"
                  x-transition:leave-end="opacity-0 translate-x-12"
                  style="display: none;">
-                
+
                 <button @click="pauseVideo()" class="flex items-center gap-4 bg-black/30 backdrop-blur-md border border-white/20 px-8 py-5 hover:bg-[var(--color-gold)] hover:border-[var(--color-gold)] transition-all duration-500 group">
                     <div class="flex items-end gap-1 h-4 mr-2">
                         <span class="w-[3px] bg-white group-hover:bg-white animate-[soundbar_0.8s_ease-in-out_infinite]" style="height: 40%"></span>
@@ -186,7 +186,7 @@
     {{-- ============================================================
          SCROLL INDICATOR
     ============================================================ --}}
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 animate-bounce">
+    <div class="absolute -bottom-5 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 animate-bounce">
         <span class="font-sans text-white/50 text-[10px] tracking-[0.3em] uppercase">Scroll to Explore</span>
         <div class="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
     </div>
