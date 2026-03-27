@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:ital,opsz,wght@0,9..18,300;0,9..18,400;0,9..18,500;0,9..18,600;1,9..18,300;1,9..18,400&display=swap');
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -50,6 +50,7 @@
         text-transform: uppercase;
         font-size: 14px;
         transition: all 0.3s ease;
+        border-radius: 32px;
     }
 
     .btn-primary:hover {
@@ -66,6 +67,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         font-size: 14px;
+        border-radius: 32px;
         transition: all 0.3s ease;
     }
 
