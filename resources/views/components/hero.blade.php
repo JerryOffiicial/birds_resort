@@ -31,7 +31,6 @@
         <img src="{{ asset('images/hero-bg.jpg') }}"
              alt="Birds Resort Nature Wilderness"
              class="w-full h-full object-cover">
-        {{-- Elegant Dark Overlay for proper text contrast --}}
         <div class="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40"></div>
     </div>
@@ -50,35 +49,35 @@
     {{-- ============================================================
          LAYER 2 (z-10): HERO CONTENT + GLASS VIDEO CARD
     ============================================================ --}}
-    <div class="relative z-10 w-full max-w-[var(--max-width-resort)] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 pt-20">
+    <div class="relative z-10 w-full max-w-[var(--max-width-resort)] mx-auto px-5 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 pt-28 lg:pt-20">
 
         {{-- LEFT: Text Content --}}
         <div class="flex flex-col justify-center max-w-2xl w-full text-center lg:text-left items-center lg:items-start text-white">
 
             {{-- Eyebrow --}}
-            <div class="flex items-center gap-4 mb-6 lg:mb-8">
+            <div class="flex items-center gap-3 sm:gap-4 mb-5 lg:mb-8">
                 <span class="hidden lg:block w-12 h-px bg-[var(--color-gold)]"></span>
-                <span class="font-sans text-[var(--color-gold)] text-xs md:text-sm tracking-[0.25em] uppercase font-medium">
+                <span class="font-sans text-[var(--color-gold)] text-[10px] sm:text-xs md:text-sm tracking-[0.25em] uppercase font-medium">
                     Sri Lanka's First Luxury Aviary Resort
                 </span>
                 <span class="hidden lg:block w-12 h-px bg-[var(--color-gold)]"></span>
             </div>
 
             {{-- Heading --}}
-            <h1 class="font-cinzel text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-medium leading-[1.1] mb-6 lg:mb-8 drop-shadow-xl"
+            <h1 class="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-medium leading-[1.1] mb-5 lg:mb-8 drop-shadow-xl"
                 style="mask-image: linear-gradient(to top, transparent 0%, black 45%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 45%);">
                 Escape<br class="hidden lg:block" />
-                <span class="text-[var(--color-gold)]  font-light">Into</span>
+                <span class="text-[var(--color-gold)] font-light">Into</span>
                 Nature
             </h1>
 
             {{-- Subtext --}}
-            <p class="font-sans text-white/90 text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 lg:mb-12 max-w-lg drop-shadow">
+            <p class="font-sans text-white/90 text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed mb-8 lg:mb-12 max-w-lg drop-shadow">
                 Experience unparalleled luxury within 50 acres of pristine wilderness. Reconnect with the natural world in a sanctuary designed for the soul.
             </p>
 
             {{-- CTA Buttons --}}
-            <div class="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
                 {{-- Book Now --}}
                 <a href="/book" class="btn-primary w-full sm:w-auto text-center inline-flex justify-center items-center">
                     Reserve Your Stay
@@ -105,7 +104,7 @@
         </div>
 
         {{-- RIGHT: Video Card (Desktop Only) --}}
-        <div class="hidden lg:flex flex-col items-end shrink-0 w-[380px]">
+        <div class="hidden lg:flex flex-col items-end shrink-0 w-[340px] xl:w-[380px]">
 
             {{-- EXPANDED CARD (default video thumbnail) --}}
             <div x-show="!playing"
@@ -117,39 +116,40 @@
                  x-transition:leave-end="opacity-0 translate-y-8"
                  class="w-full">
 
-                <div class="bg-black/20 backdrop-blur-md border border-white/10 p-5 rounded-[40px] hover:-translate-y-2 transition-transform duration-500 cursor-pointer group"
+                <div class="backdrop-blur-xl border border-white/[0.08] p-4 xl:p-5 rounded-[32px] xl:rounded-[40px] hover:-translate-y-2 transition-all duration-500 cursor-pointer group hover:shadow-[0_8px_40px_rgba(159,125,68,0.15)]"
+                     style="background: rgba(0,0,0,0.15);"
                      @click="playVideo()">
 
                     {{-- Thumbnail --}}
-                    <div class="relative overflow-hidden rounded-4xl mb-6 h-56 w-full bg-gray-900 border border-white/10">
+                    <div class="relative overflow-hidden rounded-3xl xl:rounded-4xl mb-4 xl:mb-6 h-48 xl:h-56 w-full bg-gray-900 border border-white/[0.06]">
                         <img src="{{ asset('images/hero-thumbnail.jpg') }}"
                              alt="Birds Resort Cinematic"
-                             class="w-full h-full  object-cover transform group-hover:scale-105 transition-transform duration-1000">
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
                         <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
 
                         {{-- Play Icon --}}
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-16 h-16 rounded-full border border-white/50 flex items-center justify-center  group-hover:bg-[var(--color-gold)] group-hover:border-[var(--color-gold)] transition-all duration-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <div class="w-14 h-14 xl:w-16 xl:h-16 rounded-full border border-white/50 flex items-center justify-center group-hover:bg-[var(--color-gold)] group-hover:border-[var(--color-gold)] transition-all duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 xl:w-6 xl:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
                         </div>
 
                         {{-- Duration --}}
-                        <div class="absolute bottom-4 right-4 bg-black/60 px-3 py-1 text-xs font-sans text-white tracking-[0.1em]">
+                        <div class="absolute bottom-3 right-3 xl:bottom-4 xl:right-4 bg-black/60 px-3 py-1 text-xs font-sans text-white tracking-[0.1em]">
                             2:30
                         </div>
                     </div>
 
                     {{-- Info --}}
-                    <div class="space-y-3 px-1">
+                    <div class="space-y-2 xl:space-y-3 px-1">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-px bg-[var(--color-gold)]"></span>
                             <span class="font-sans text-[var(--color-gold)] text-[10px] tracking-[0.25em] uppercase">Our Story</span>
                         </div>
-                        <h3 class="font-cinzel text-white text-2xl">The Birds Experience</h3>
-                        <p class="font-sans text-white/60 text-sm font-light leading-relaxed">
+                        <h3 class="font-cinzel text-white text-xl xl:text-2xl">The Birds Experience</h3>
+                        <p class="font-sans text-white/60 text-xs xl:text-sm font-light leading-relaxed">
                             Discover the perfect harmony of luxury accommodation and untamed nature in a cinematic journey.
                         </p>
                     </div>
@@ -186,9 +186,9 @@
     {{-- ============================================================
          SCROLL INDICATOR
     ============================================================ --}}
-    <div class="absolute -bottom-5 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 animate-bounce">
-        <span class="font-sans text-white/50 text-[10px] tracking-[0.3em] uppercase">Scroll to Explore</span>
-        <div class="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+    <div class="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 sm:gap-4 animate-bounce">
+        <span class="font-sans text-white/50 text-[9px] sm:text-[10px] tracking-[0.3em] uppercase">Scroll to Explore</span>
+        <div class="w-px h-8 sm:h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
     </div>
 
 </section>
