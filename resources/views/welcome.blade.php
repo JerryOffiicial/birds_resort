@@ -5,4 +5,5 @@
     @include('components.about')
     @include('components.value-strip')
     @include('components.experiences-preview')
+    @include('components.rooms-preview')
 </x-layouts.app>
